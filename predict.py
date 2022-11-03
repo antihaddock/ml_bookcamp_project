@@ -11,19 +11,12 @@ with open('./Models/Dementia-model.bin', 'rb') as f_in:
 
 
 def predict_outcome(df, dv, model):
-   # numeric = ['Visit', 'MR Delay', 'Hand', 'Age', 'EDUC', 'SES',
-   #    'MMSE', 'CDR', 'eTIV', 'nWBV', 'ASF']
-   # categoric = ['M/F']
-    #X = df[categoric + numeric].to_dict(orient='rows')
     X = dv.transform([df])
     y_pred = model.predict(X)
     y_pred_prob = model.predict_proba(X)
     return y_pred, y_pred_prob 
 
 
-#df = pd.read_csv('./Data/deployment_test_data.csv')
-
-#print(predict_outcome(df, dv, model))
 
 app = Flask('Dementia_prediction')
 
@@ -43,4 +36,5 @@ def predict_outcomes():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=9696)
+    #app.run(debug=True, host='0.0.0.0', port=9696)
+    app.run(debug=True, host='127.0.0.1', port=5000)
