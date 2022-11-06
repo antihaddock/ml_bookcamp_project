@@ -5,8 +5,13 @@
 import requests
 import pandas as pd
 
-#url = 'http://172.26.3.210:9696/predict_outcome'
-url = 'http://127.0.0.1:5000/predict_outcome'
+# Local port test options
+#url = 'http://0.0.0.0:9696/predict_outcome'
+
+# Elastic Beanstalk address
+#host = 'mlbookcamp-serving.eba-msik3tgu.ap-southeast-2.elasticbeanstalk.com'
+#url = f'http://{host}/predict'
+
 
 df = pd.read_csv('./Data/deployment_test_data.csv')
 

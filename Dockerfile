@@ -12,6 +12,6 @@ COPY ["predict.py", "./"]
 
 COPY ["Models/Dementia-model.bin" , "./Models/"] 
 
-EXPOSE 5000
+EXPOSE 9696
 
-ENTRYPOINT ["gunicorn", "--bind=127.0.0.1:5000", "predict:app"]
+ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
