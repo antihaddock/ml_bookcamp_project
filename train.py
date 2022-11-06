@@ -1,5 +1,8 @@
 # training ML model for mid term project
+"""
+This file will train an XG Boost model from data located in the /Data folder and export the model as a pickle file for use.
 
+"""
 import pandas as pd
 import pickle
 from xgboost import XGBClassifier
@@ -34,13 +37,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.6, random_
 # now split into train and validation to give 60/20/20 split
 X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.5, random_state=1)
 
-# # To use XGBoost Dmatrix we need to label encode our categorical target variabe
-# le = LabelEncoder()
-# le.fit(y_train)
-# y_train_unlabelled = le.transform(y_train)
-# y_test_unlabelled = le.transform(y_test)
-# y_val_unlabelled = le.transform(y_val)
-
 # ------------------- One Hot Encode using dict vectorizer --------------------------------------
 # use dict vectorizer to one hot encode the age variable for X_train, X_test and X_val
 
@@ -65,6 +61,7 @@ X_val = vectorizer.transform(val_dict)
 
 # ------------------  Train a XGBoot Model --------------------------------------------------------- 
 # We will use the Scikit Learn wrapper of xgb to avoid needing to create matrix and label encode the Y variables
+# these parameters have been found following EDA and modelling in notebook.ipynb
 
 xgparams =  {
  'learning_rate': 0.37304418718359394,

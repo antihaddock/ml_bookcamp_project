@@ -7,7 +7,7 @@ https://www.kaggle.com/datasets/jboysen/mri-and-alzheimers
 
 ## How to use this Repo ##
 
-### Exploratory Data Analysis###
+### Exploratory Data Analysis ###
 Data is stored in the `Data` directory. `oasis_longitudinal.csv` is the data utiulised by `notebook.ipynb` for exploratory analysis and modelling. `train.py` also utilises this data to train the XGboost model used in project.  In `train.py` a XGBoost model is trained utilising the hyperopts library to find optium hyperparameters for the model.
 
 The test data created in the test/train/validation split is saved as `deployment_test_data.csv`  which can be used to sev data to the model.
