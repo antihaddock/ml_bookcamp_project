@@ -30,9 +30,9 @@ A pipfile is provided for this repo. To install dependencies call `pipenv instal
 
  ### Deployment to Elastic Beanstalk ###
 
- This model and its docker container is deployed to Elastic Beanstalk. This container on EB can be interacted with by uncommenting line 12 & 13 in `test_serve_flask_app.py` to point this script to the deployed container location.
+ This model and its docker container is deployed to Elastic Beanstalk. This container on EB can be interacted with by calling and running `test_serve_flask_app.py`. To point this script at a local deployment of the model uncomment line 9 and comment out line 12 & 13. This will run the flask app or container locally.
 
  If you would like to deploy this model to your own EB instance you will need the following steps
  1. Call `eb init -p docker -r ap-southeast-2  mlbookcamp-serving` to intialise an elastic beanstalk instance for deployment. Replace the -r region with whatever your preferred region is.  Call ` eb create mlbookcamp-env` to finish the creation of the EB instance.
- 2. You may run the EB instance locally for testing via `eb local run --port 9696`
+ 2. You may run the EB instance locally for testing via `eb local run --port 5000`
  3. To deploy this container to your own EB account `eb create mlbookcamp-serving` will deploy the docker contaiiner.

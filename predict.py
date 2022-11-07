@@ -20,6 +20,9 @@ def predict_outcome(df, dv, model):
 
 app = Flask('Dementia_prediction')
 
+# @app.route(rule="/test", methods=["GET"])
+# def test():
+#     return 'SERVICE IS UP'
 
 @app.route('/predict_outcome', methods=['POST'])
 def predict_outcomes():
@@ -36,5 +39,5 @@ def predict_outcomes():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=9696)
-    #app.run(debug=True, host='127.0.0.1', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
+    
